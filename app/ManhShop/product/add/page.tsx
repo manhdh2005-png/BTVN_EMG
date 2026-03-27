@@ -36,7 +36,7 @@ export default function Page() {
   });
 
   alert("Added!");
-  router.push("/BTVN_6");
+  router.push("/ManhShop/product");
 };
   
 

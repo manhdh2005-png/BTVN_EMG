@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
   params: Promise<{ id: string }>;
 };
@@ -19,9 +21,11 @@ export default async function Page({ params }: Props) {
         {/* Khung sản phẩm cột trái */}
         <div className="bg-gray-50 round-3xl p-8 flex justify-center items-center border border-gray-100 shadow-inner">
           {/* shadow-inner (làm phần tử lõm xuống) */}
-          <img
+          <Image
             src={product.image}
             alt={product.title}
+            width={300}
+            height={300}
             className="max-h-[500px] object-contain hover:scale-105 transition-transform duration-500"
           />
         </div>
