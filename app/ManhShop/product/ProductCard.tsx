@@ -33,7 +33,7 @@ export function ProductCard({p} : {p : Product}){
               </span>
             </div>
             <div className="flex-1 flex flex-col">
-              <h3 className="font-bold text-gray-800 text-lg line-clamp-2 h-14 mb-1 group-hover:text-blue-600 transition-colors">
+              <h3 className="font-bold text-gray-800 text-lg line-clamp-2 h-14 mb-1 group-hover:text-blue-600 transition-colors font-unifrakturMaguntia">
                 {/* line-clamp để tiêu đề không bị quá dài làm lệch card */}
                 {p.title}
               </h3>

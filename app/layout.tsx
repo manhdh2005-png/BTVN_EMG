@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , UnifrakturMaguntia, Inter } from "next/font/google";
+import { Geist, Geist_Mono , UnifrakturMaguntia, Kalam } from "next/font/google";
 import "./globals.css";
-
-import { Variable } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +14,12 @@ const geistMono = Geist_Mono({
 
 const unifrakturMaguntia = UnifrakturMaguntia({
   variable: "--font-unifraktur-maguntia",
+  subsets: ["latin"],
+  weight: ["400"]
+});
+
+const kalam = Kalam({
+  variable: "--font-ka-lam",
   subsets: ["latin"],
   weight: ["400"]
 });
@@ -39,7 +43,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${unifrakturMaguntia.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${unifrakturMaguntia.variable} ${kalam.variable} antialiased`}
       >
       {children}
       </body>
