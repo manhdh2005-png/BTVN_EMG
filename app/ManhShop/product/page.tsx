@@ -28,8 +28,8 @@ export default async function Page() {
     
     
     <div className="mb-8 drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]">
-      <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter italic uppercase">
-        MẠNH <span className="text-stone-300">SHOP</span> {/* Đổi màu 'Shop' sang tông sepia */}
+      <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tighter italic uppercase font-unifrakturMaguntia">
+        MẠNH <span className="text-stone-300">SHOP</span> 
       </h1>
       <div className="h-1.5 w-32 bg-stone-100 mt-2 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.4)]"></div>
     </div>
