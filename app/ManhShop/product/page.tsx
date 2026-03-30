@@ -1,15 +1,26 @@
 import Link from "next/link";
-import { Product } from "@/types/product";
 import { ProductCard } from "./ProductCard";
+import { ProductsWithPagination } from "./action";
+import ProductsPagination from "./ProductsPagination";
 
+type Props ={
+  searchParams: {
+    page?: string;
+    limit?: string;
+  };
+};
 
-export default async function Page() {
+export default async function Page({ searchParams }: Props) {
 
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  const res = await fetch("https://fakestoreapi.com/products");
-  const products = await res.json() as Product[];
+  const page = Number(searchParams?.page) || 1;
+  const limit = Number(searchParams?.limit) || 3;
   
+  const { products, total } = await ProductsWithPagination({
+    page,
+    limit,
+  });
 
   return (
     <div className="p-10">
@@ -18,13 +29,13 @@ export default async function Page() {
       <header className="relative bg-black w-full"
               style={{
                 height: `320px`,
-                backgroundImage: "url('/BTVN6/zozzoshop1.jpg')",
+                backgroundImage: "url('/BTVN6/viemtru.jpg')",
                 backgroundSize: `cover`,
-                backgroundPosition:`center 55%`
+                backgroundPosition:`center 20%`
               }}>
 
       
-        <div className="relative h-full container mx-auto px-10 flex flex-col justify-center items-start">
+        <div className="relative h-full container mx-auto px-10 flex flex-col justify-center items-end">
     
     
     <div className="mb-8 drop-shadow-[0_4px_6px_rgba(0,0,0,0.6)]">
@@ -51,6 +62,14 @@ export default async function Page() {
         {products.map((p) => (
           <ProductCard p={p} key = {p.id} />
         ))}
+      </div>
+
+      <div className="flex justify-center mt-10">
+        <ProductsPagination
+          page={page}
+          total={total}
+          limit={limit}
+        />
       </div>
     </div>
   );
