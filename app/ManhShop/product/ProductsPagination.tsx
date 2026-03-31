@@ -18,12 +18,12 @@ const ProductsPagination = ({
     return(
         <div>
             <Pagination
-                current={page}
+                defaultCurrent={page}
                 total={total}
                 size="large"
                 pageSize={limit || 3}
                 onChange={(page, pageSize) => {
-                    router.push(`/ManhShop?page=${page}&limit=${pageSize}`);
+                    router.push(`?page=${page}&limit=${pageSize}`);
                 }}
             />
         </div>

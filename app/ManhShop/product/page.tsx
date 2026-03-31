@@ -4,18 +4,16 @@ import { ProductsWithPagination } from "./action";
 import ProductsPagination from "./ProductsPagination";
 
 type Props ={
-  searchParams: {
-    page?: string;
-    limit?: string;
-  };
+  searchParams: Promise<{ page?: string; limit?: string }>;
 };
 
 export default async function Page({ searchParams }: Props) {
 
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  const page = Number(searchParams?.page) || 1;
-  const limit = Number(searchParams?.limit) || 3;
+  const params = await searchParams;
+  const page = Number(params.page) || 1;
+  const limit = Number(params.limit) || 3;
   
   const { products, total } = await ProductsWithPagination({
     page,
