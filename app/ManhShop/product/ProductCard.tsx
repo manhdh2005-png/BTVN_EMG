@@ -4,7 +4,7 @@ import Image from "next/image"
 import Link from "next/link";
 import { ImageLoaderProps } from "next/image";
 
-export function ProductCard({p} : {p : Product}){
+function ProductCard({p} : {p : Product}){
 
   const imageLoader = ({ src, width, quality } : ImageLoaderProps) => {
     return `${src}?w=${width}&q=${quality || 75}`;
@@ -60,3 +60,5 @@ export function ProductCard({p} : {p : Product}){
             </Link>
           </div>
 )}
+
+export default ProductCard
