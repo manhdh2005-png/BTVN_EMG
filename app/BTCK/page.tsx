@@ -1,7 +1,7 @@
 export default function Page() {
   return (
     <div>
-      đang không có gì
+      Trang chủ BTCK
     </div>
   )
 }

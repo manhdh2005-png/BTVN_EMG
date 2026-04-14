@@ -19,6 +19,7 @@ export default function LoginPage() {
       alert("Sai tài khoản hoặc mật khẩu")
     } else {
       router.push("/sensor")
+      router.refresh()
     }
   }
 
